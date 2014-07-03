@@ -11,7 +11,7 @@ ZSH_THEME="jnrowe"
 
 # Example aliases
  alias zshc="$EDITOR ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshr="source ~/.zshrc"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -76,3 +76,7 @@ export EDITOR='vim'
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
