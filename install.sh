@@ -1,13 +1,17 @@
 #!/bin/bash
 
-echo "=== Installing Oh-My-ZSH"
-if [ $(command -v curl) ]; then 
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "=== Installing Oh-My-ZSH"
+  if [ $(command -v curl) ]; then 
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  else
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  fi
 fi
 
 echo "=== Installing local config"
+zsh 
+
 cd ~ZSH_CUSTOM
 mv plugins plugins.old
 if [ $(command -v git) ]; then
@@ -26,3 +30,4 @@ cd plugins
 ln -s ~/.zshrc ~ZSH_CUSTOM/plugins/zshrc
 
 echo "=== Done"
+exit
