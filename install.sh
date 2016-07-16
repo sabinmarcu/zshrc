@@ -26,6 +26,6 @@ else
   rm master.zip
 fi
 cd plugins
-ln -s ~/.zshrc ~ZSH_CUSTOM/plugins/zshrc
+ln -s $HOME/.zshrc $HOME/.oh-my-zsh/custom/plugins/zshrc
 
 echo "=== Done"
