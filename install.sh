@@ -10,9 +10,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 echo "=== Installing local config"
-zsh 
 
-cd ~ZSH_CUSTOM
+cd $HOME/.oh-my-zsh/custom
 mv plugins plugins.old
 if [ $(command -v git) ]; then
   git clone http://github.com/sabinmarcu/zshrc.git plugins
@@ -30,4 +29,3 @@ cd plugins
 ln -s ~/.zshrc ~ZSH_CUSTOM/plugins/zshrc
 
 echo "=== Done"
-exit
