@@ -7,7 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="jnrowe"
 #ZSH_THEME="terminalparty"
-ZSH_THEME="wedisagree"
+#ZSH_THEME="wedisagree"
+ZSH_THEME="agnoster"
 
 # Example aliases
  alias zshc="$EDITOR ~/.zshrc"
@@ -79,4 +80,16 @@ export EDITOR='vim'
 
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
+fi
+
+if [[ ! $(command -v pbcopy) &&  $(command -v xclip) ]]; then
+    alias pbcopy="xclip -sel clip"
+fi
+
+if [ $(command -v nvm) ]; then
+    nvm use default &> /dev/null
+fi
+
+if [ -d ~/.bin ]; then
+    export PATH="$HOME/.bin:$PATH"
 fi
