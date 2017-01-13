@@ -26,6 +26,10 @@ else
   rm master.zip
 fi
 
+if [ -e $HOME/.zshrc ]; then
+    mv $HOME/.zshrc $HOME/.zshrc.old
+fi
+
 ln -s $HOME/.oh-my-zsh/custom/zshrc $HOME/.zshrc
 touch $HOME/.zshaliases
 
