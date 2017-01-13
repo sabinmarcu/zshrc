@@ -11,10 +11,10 @@ fi
 
 echo "=== Installing local config"
 
-cd $HOME/.oh-my-zsh/custom
-rm -rf plugins
+cd $HOME/.oh-my-zsh
+rm -rf custom
 if [ $(command -v git) ]; then
-  git clone http://github.com/sabinmarcu/zshrc.git plugins
+  git clone http://github.com/sabinmarcu/zshrc.git custom
 else 
   if [ $(command -v curl) ]; then 
     sh -c "$(curl -OL http://github.com/sabinmarcu/zshrc/archive/master.zip)"
@@ -22,8 +22,7 @@ else
     sh -c "$(wget http://github.com/sabinmarcu/zshrc/archive/master.zip)"
   fi
   unzip master.zip
-  mv zshrc-master/* .
-  rm -rf zshrc-master
+  mv zshrc-master custom
   rm master.zip
 fi
 
