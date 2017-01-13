@@ -26,6 +26,9 @@ else
   rm master.zip
 fi
 
+cd custom
+git submodule update --init --recursive
+
 if [ -e $HOME/.zshrc ]; then
     mv $HOME/.zshrc $HOME/.zshrc.old
 fi
