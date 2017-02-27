@@ -52,7 +52,7 @@ ZSH_THEME="materialshell-dark"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew atom coffee github node jsontools meteor npm pip sudo terminalapp themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git osx brew atom coffee github node jsontools meteor npm pip sudo terminalapp themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting zsh-history-substring-search autoenv)
 
 source $HOME/.zshaliases
 source $ZSH/oh-my-zsh.sh
