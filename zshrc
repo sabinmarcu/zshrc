@@ -52,7 +52,14 @@ ZSH_THEME="materialshell-dark"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew atom coffee github node jsontools meteor npm pip sudo terminalapp themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting zsh-history-substring-search autoenv)
+plugins=(git osx brew coffee github node jsontools meteor npm pip sudo themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting)
+
+if command -v autoenv &> /dev/null; then
+    plugins+=(autoenv)
+fi
+if command -v direnv &> /dev/null; then
+    plugins+=(direnv)
+fi
 
 source $HOME/.zshaliases
 source $ZSH/oh-my-zsh.sh
@@ -62,16 +69,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.npmfiles/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-export EDITOR='vim'
+if command -v code &> /dev/null; then
+    export EDITOR="code"
+else 
+    export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -103,3 +105,11 @@ export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
+export PATH="/usr/local/opt/docker-machine/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
