@@ -70,7 +70,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.npmfiles/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 if command -v code &> /dev/null; then
-    export EDITOR="code"
+    export EDITOR="code --wait"
 else 
     export EDITOR='vim'
 fi
