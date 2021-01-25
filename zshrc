@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+if [ -e ~/.zshrc.init ]; then
+    source ~/.zshrc.init
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -12,8 +16,8 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="materialshell-dark"
 
 # Example aliases
- alias zshc="$EDITOR ~/.zshrc"
- alias zshr="source ~/.zshrc"
+alias zshc="$EDITOR ~/.zshrc"
+alias zshr="source ~/.zshrc"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -34,7 +38,7 @@ ZSH_THEME="materialshell-dark"
 # DISABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
