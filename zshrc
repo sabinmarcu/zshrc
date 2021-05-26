@@ -5,15 +5,7 @@ if [ -e ~/.zshrc.init ]; then
     source ~/.zshrc.init
 fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="jnrowe"
-#ZSH_THEME="terminalparty"
-#ZSH_THEME="wedisagree"
-#ZSH_THEME="agnoster"
-ZSH_THEME="materialshell-dark"
+ZSH_THEME="spaceship"
 
 # Example aliases
 alias zshc="$EDITOR ~/.zshrc"
@@ -117,3 +109,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
+
+alias gwho="git rev-parse --abbrev-ref HEAD"

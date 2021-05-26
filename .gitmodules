@@ -10,3 +10,6 @@
 [submodule "plugins/zsh-syntax-highlighting"]
 	path = plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "themes/spaceship-prompt"]
+	path = themes/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt.git
