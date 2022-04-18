@@ -48,7 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew coffee github node jsontools meteor npm pip sudo themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting)
+plugins=(git macos brew coffee github node jsontools meteor npm pip sudo themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting gitignore)
 
 if command -v autoenv &> /dev/null; then
     plugins+=(autoenv)
@@ -111,3 +111,4 @@ if command -v starship &> /dev/null; then
 fi
 
 alias gwho="git rev-parse --abbrev-ref HEAD"
+export GPG_TTY=$(tty)
