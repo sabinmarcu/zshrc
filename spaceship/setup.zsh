@@ -1,11 +1,16 @@
 
 ZSH_THEME="spaceship"
+
+source $ZSH_CUSTOM/spaceship/package.zsh
+source $ZSH_CUSTOM/spaceship/separator.zsh
 source $ZSH_CUSTOM/spaceship/yarn.zsh
 
 SPACESHIP_PACKAGE_SYMBOL="${SPACESHIP_PACKAGE_SYMBOL="📦 "}"
 SPACESHIP_NODE_PREFIX="${SPACESHIP_NODE_PREFIX="and "}"
 
 SPACESHIP_PROMPT_ORDER=(
+    separator
+    line_sep
     time
     user
     dir
@@ -13,7 +18,7 @@ SPACESHIP_PROMPT_ORDER=(
     git
     hg
     line_sep
-    package
+    package_extra
     yarn
     node
     docker
