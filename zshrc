@@ -5,7 +5,8 @@ if [ -e ~/.zshrc.init ]; then
     source ~/.zshrc.init
 fi
 
-ZSH_THEME="spaceship"
+export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+source $ZSH_CUSTOM/spaceship/setup.zsh
 
 # Example aliases
 alias zshc="$EDITOR ~/.zshrc"
@@ -48,7 +49,31 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git macos brew coffee github node jsontools meteor npm pip sudo themes tmux vundle xcode tmuxinator lg psg killz zsh-nvm zsh-syntax-highlighting gitignore zsh-vi-mode)
+plugins=(
+    git
+    macos
+    brew
+    coffee
+    github
+    node
+    jsontools
+    meteor
+    npm
+    pip
+    sudo
+    themes
+    tmux
+    vundle
+    xcode
+    tmuxinator
+    lg
+    psg
+    killz
+    zsh-nvm
+    zsh-syntax-highlighting
+    gitignore
+    zsh-vi-mode
+)
 
 if command -v autoenv &> /dev/null; then
     plugins+=(autoenv)
