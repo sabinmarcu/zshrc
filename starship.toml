@@ -57,3 +57,8 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+
+[status]
+disabled = false
+symbol = "🔴 "
+format = '[\[$symbol$status\]]($style) '

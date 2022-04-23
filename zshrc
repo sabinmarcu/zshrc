@@ -5,9 +5,6 @@ if [ -e ~/.zshrc.init ]; then
     source ~/.zshrc.init
 fi
 
-export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-source $ZSH_CUSTOM/spaceship/setup.zsh
-
 # Example aliases
 alias zshc="$EDITOR ~/.zshrc"
 alias zshr="source ~/.zshrc"
