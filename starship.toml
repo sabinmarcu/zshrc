@@ -1,0 +1,59 @@
+format = """
+$username\
+$hostname\
+$localip\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$line_break\
+$package\
+$container\
+$deno\
+$nodejs\
+$python\
+${custom.yarn}\
+${custom.typescript}\
+${custom.vite}\
+$memory_usage\
+$env_var\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character"""
+
+[custom.yarn]
+command = "yarn --version"
+files = ["yarn.lock", ".yarnrc"]
+symbol = " "
+style = "#117cad"
+format = "[$symbol(v$output )]($style)"
+directories = ["node_modules", ".yarn"]
+
+[custom.typescript]
+command = "yarn tsc --version &> /dev/null && yarn tsc --version || echo 'Version x.x.x' | cut -f2 -d ' '"
+when = """ls | grep tsconfig.\\*json"""
+style = "#3178c6"
+format = "[$symbol(v$output )]($style)"
+symbol = " "
+
+[custom.vite]
+command = "yarn vite --version | cut -d ' ' -f1 | cut -d '/' -f2"
+files = ["vite.config.ts"]
+symbol = " "
+format = "[$symbol(v$output )]($style)"
+style = "yellow"
+
+[package]
+symbol = " "
+
+[nodejs]
+symbol = " "

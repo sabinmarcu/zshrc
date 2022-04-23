@@ -11,7 +11,10 @@ fi
 
 echo "=== Installing local config"
 
-cd $HOME/.oh-my-zsh
+local ZSH_CUSTOM
+ZSH_CUSTOM="$HOME/.oh-my-zsh"
+
+cd $ZSH_CUSTOM
 rm -rf custom
 if [ $(command -v git) ]; then
   git clone http://github.com/sabinmarcu/zshrc.git custom
@@ -35,5 +38,8 @@ fi
 
 ln -s $HOME/.oh-my-zsh/custom/zshrc $HOME/.zshrc
 touch $HOME/.zshaliases
+
+mkdir -p ~/.config
+ln -s $ZSH_CUSTOM/starship.toml ~/.config/starship.toml
 
 echo "=== Done"
