@@ -39,7 +39,7 @@ format = "[$symbol(v$output )]($style)"
 directories = ["node_modules", ".yarn"]
 
 [custom.typescript]
-command = "yarn tsc --version &> /dev/null && yarn tsc --version || echo 'Version x.x.x' | cut -f2 -d ' '"
+command = "(yarn tsc --version &> /dev/null && yarn tsc --version || echo 'Version x.x.x') | cut -f2 -d ' '"
 when = """ls | grep tsconfig.\\*json"""
 style = "#3178c6"
 format = "[$symbol(v$output )]($style)"
