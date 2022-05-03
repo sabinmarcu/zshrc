@@ -9,6 +9,8 @@ fi
 alias zshc="$EDITOR ~/.zshrc"
 alias zshr="source ~/.zshrc"
 
+ZSH_THEME="materialshell-dark"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

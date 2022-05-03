@@ -30,6 +30,8 @@ $status\
 $shell\
 $character"""
 
+command_timeout=1000
+
 [custom.yarn]
 command = "yarn --version"
 files = ["yarn.lock", ".yarnrc"]
@@ -39,15 +41,17 @@ format = "[$symbol(v$output )]($style)"
 directories = ["node_modules", ".yarn"]
 
 [custom.typescript]
-command = "(yarn tsc --version &> /dev/null && yarn tsc --version || echo 'Version x.x.x') | cut -f2 -d ' '"
-when = """ls | grep tsconfig.\\*json"""
+command = "cat package.json | jq -r '.[\"dependencies\",\"devDependencies\",\"peerDependencies\"] | select( has(\"typescript\") == true ) | .typescript' | sed -E 's/.*([0-9]+\\.[0-9]+\\.[0-9]+)$/\\1/g' "
+files = ["package.json"]
+when = """-e package.json && $(ls | grep tsconfig.\\*json)"""
 style = "#3178c6"
 format = "[$symbol(v$output )]($style)"
 symbol = " "
 
 [custom.vite]
-command = "yarn vite --version | cut -d ' ' -f1 | cut -d '/' -f2"
+command = "cat package.json | jq -r '.[\"dependencies\",\"devDependencies\",\"peerDependencies\"] | select( has(\"vite\") == true ) | .typescript' | sed -E 's/.*([0-9]+\\.[0-9]+\\.[0-9]+)$/\\1/g' "
 files = ["vite.config.ts"]
+when = """-e package.json"""
 symbol = " "
 format = "[$symbol(v$output )]($style)"
 style = "yellow"
