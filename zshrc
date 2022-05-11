@@ -71,6 +71,8 @@ plugins=(
     zsh-nvm
     zsh-syntax-highlighting
     gitignore
+    zsh-history-substring-search
+    zsh-z
     zsh-vi-mode
 )
 
@@ -136,3 +138,10 @@ fi
 
 alias gwho="git rev-parse --abbrev-ref HEAD"
 export GPG_TTY=$(tty)
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+set -o vi

@@ -13,3 +13,6 @@
 [submodule "plugins/zsh-vi-mode"]
 	path = plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode
+[submodule "plugins/zsh-z"]
+	path = plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z
