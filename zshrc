@@ -144,4 +144,8 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+if command -v nvim &> /dev/null; then
+    alias nvimconfig="nvim ~/.config/nvim/lua/user"
+fi
+
 set -o vi

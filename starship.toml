@@ -33,10 +33,11 @@ $character"""
 command_timeout=1000
 
 [custom.yarn]
-command = "yarn --version"
+command = "cat package.json | jq '.packageManager' -r | cut -d '@' -f 2"
 files = ["yarn.lock", ".yarnrc"]
 symbol = " "
 style = "#117cad"
+when = "cat package.json | jq '.packageManager' | grep 'yarn@*'"
 format = "[$symbol(v$output )]($style)"
 directories = ["node_modules", ".yarn"]
 
