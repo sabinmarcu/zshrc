@@ -115,6 +115,10 @@ if [ $(command -v nvm) ]; then
     nvm use default &> /dev/null
 fi
 
+if [ $(command -v gh) ]; then
+    eval "$(gh completion -s zzh)"
+fi
+
 if [ -d ~/.bin ]; then
     export PATH="$HOME/.bin:$PATH"
 fi
