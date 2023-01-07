@@ -116,7 +116,7 @@ if [ $(command -v nvm) ]; then
 fi
 
 if [ $(command -v gh) ]; then
-    eval "$(gh completion -s zzh)"
+    eval "$(gh completion -s zsh)"
 fi
 
 if [ -d ~/.bin ]; then
